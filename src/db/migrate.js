@@ -3,11 +3,15 @@
  * Creates the trades table if it doesn't already exist.
  * Run with: npm run migrate
  */
+//former npm migrate
+//require("dotenv").config();
+//const { Pool } = require("pg");
 
+//new npm migrate
 require("dotenv").config();
-const { Pool } = require("pg");
+const pool = require("./pool");
 
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+//const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
 const CREATE_TABLE_SQL = `
 CREATE TABLE IF NOT EXISTS trades (
